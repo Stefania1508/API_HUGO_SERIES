@@ -6,6 +6,8 @@ def create_app():
     app.register_blueprint(series_bp)
     return app
 
+# SACA ESTO DEL IF
+app = create_app()
+
 if __name__ == "__main__":
-    app = create_app()
     app.run(debug=True)
