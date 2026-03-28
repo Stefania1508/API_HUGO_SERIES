@@ -4,7 +4,11 @@ from app.routes.series_routes import series_bp
 
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(
+        __name__,
+        template_folder="../templates",
+        static_folder="../static",
+    )
     app.register_blueprint(series_bp)
     return app
 
