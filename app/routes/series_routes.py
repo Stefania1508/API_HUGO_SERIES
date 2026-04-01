@@ -1,4 +1,3 @@
-#recibe la búsqueda del usuario,manda esa búsqueda al servicio,obtiene los resultados
 from flask import Blueprint, render_template, request
 from app.services.series_service import SeriesService
 
@@ -14,3 +13,7 @@ def home():
         data = series_service.search_series_data(query)
 
     return render_template("index.html", data=data, query=query)
+
+@series_bp.route("/offline", methods=["GET"])
+def offline():
+    return render_template("offline.html")
